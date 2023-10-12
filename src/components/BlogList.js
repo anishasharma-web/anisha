@@ -1,5 +1,5 @@
  import { useEffect, useState } from "react";
-import { getAllBlogs } from "../services/UserService";
+import { getAllBlogs } from "../services/BlogService";
 import { Link } from "react-router-dom";
 import BlogDetails from "./BlogDetails";
 

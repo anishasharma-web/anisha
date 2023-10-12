@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const userUrl = 'https://jsonplaceholder.typicode.com/posts';
+const userUrl = 'https://jsonplaceholder.typicode.com/users';
 
 const getAllBlogs = () => {
    console.log('getAllBlogs');
@@ -8,13 +8,29 @@ const getAllBlogs = () => {
 };
 
 
-export {getAllBlogs};
-// const getBlogById = (blogId) => {
-//        console.log(blogId);
-//        return fetch(`${userUrl}/${blogId}`);
-//     };
+const register = (appUser) => {
+    console.log(appUser);
+    return axios.post(userUrl, appUser);
+};
 
-// export {getAllBlogs, getBlogById};
+const login = (appUser) => {
+    console.log(appUser);
+    return axios.get(`${userUrl}/?username=${appUser.username}`);
+};
+
+const updateUser = (appUser) => {
+    console.log(appUser);
+    return axios.put(userUrl, appUser);
+};
+
+const logout = () => {
+    console.log('logout');
+};
+
+export {register, login, updateUser, logout };
+
+
+
 
 // import axios from "axios";
 

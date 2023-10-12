@@ -7,7 +7,8 @@ import BlogDetails from "./components/BlogDetails";
 import BlogList from "./components/BlogList";
 import Login from "./components/Login";
 import Register from "./components/Register";
-
+import Logout from "./components/Logout";
+import UserProfile from "./components/UserProfile";
 
 
 const AppRoute = () => {
@@ -23,8 +24,10 @@ const AppRoute = () => {
                   <Routes>
                     <Route exact path="home" element={<Home />}/>
                     <Route path="blog-list" element={<BlogList />}/>
-                    <Route path="blog-details/:id" element={<BlogDetails/>}/>
+                    <Route path="BlogDetails/:id" element={<BlogDetails/>}/>
                     <Route path="login" element={<Login />}></Route>
+                    <Route path="logout" element={<Logout />} />
+                    <Route path="profile" element={<UserProfile />} />
                     <Route path="*" element={<Page404/>}/>
                     <Route path="register" component={Register} />
                   </Routes>
