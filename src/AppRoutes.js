@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import BlogDetails from "./components/BlogDetails";
 import BlogList from "./components/BlogList";
 import Login from "./components/Login";
+import Register from "./components/Register";
+
 
 
 const AppRoute = () => {
@@ -24,6 +26,7 @@ const AppRoute = () => {
                     <Route path="blog-details" element={<BlogDetails/>}/>
                     <Route path="login" element={<Login />}></Route>
                     <Route path="*" element={<Page404/>}/>
+                    <Route path="register" component={Register} />
                   </Routes>
             <div>
                 <Footer></Footer>
