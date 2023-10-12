@@ -5,9 +5,9 @@ const Toolbar = () => {
     return (
         <div>
             <Link to="Home">Home</Link>
-            <Link to="BlogList">All Blogs</Link>
+            <Link to="blog-list">All Blogs</Link>
             <Link to="BlogDetails">Blog Details</Link>
-            <Link to="Login">Login</Link>
+            <Link to="login">Login</Link>
             <Link to="Register">Register</Link>
         </div>
     );
