@@ -20,9 +20,6 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // You can add your user registration logic here, e.g., making an API request.
-
-    // For demonstration purposes, let's log the user's data.
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Password:', password);
