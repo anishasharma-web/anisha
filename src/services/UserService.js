@@ -7,7 +7,12 @@ const getAllBlogs = () => {
    return axios.get(userUrl);
 };
 
-export {getAllBlogs};
+const getBlogById = (blogId) => {
+       console.log(blogId);
+       return fetch(`${userUrl}/${blogId}`);
+    };
+
+export {getAllBlogs, getBlogById};
 
 // import axios from "axios";
 
