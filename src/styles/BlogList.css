@@ -1,0 +1,9 @@
+.blog-details{
+    /* border: 5px;
+    border-color: black;
+    background-color: aqua; */
+    border: 1px solid black;
+    /* box-sizing: border-box; */
+    padding: 10px;
+    width: 100%;
+}

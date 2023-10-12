@@ -1,5 +1,6 @@
 import { useState , useEffect} from "react";
 import { useParams } from "react-router";
+import '../styles/BlogDetails.css';
 // import { Routes, Route, useParams } from 'react-router-dom';
 
 
@@ -19,10 +20,14 @@ const BlogDetails = () => {
     }, []);
 
     return (
-        <div>
+        <div className="blog-details">
            <h1>Blog Details</h1>
+           <p>Posted By: {}</p>
+           <p>Email:{}</p>
            <p>{blog.title}</p>
-           <p>{blog.body}</p>
+           <p>{blog.body}{blog.body}{blog.body}{blog.body}{blog.body}{blog.body}{blog.body}{blog.body}{blog.body}{blog.body}</p>
+           <h4>Comments:</h4>
+           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
     );
 

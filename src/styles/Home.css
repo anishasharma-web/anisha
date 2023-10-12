@@ -1,3 +1,11 @@
+.home{
+    background: url('https://wallpapercave.com/dwp2x/F14VU0L.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    /* background-color: yellow; */
+}
+
 h1{
+    padding: 0ch;
     color: blue;
 }
