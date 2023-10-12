@@ -1,6 +1,7 @@
  import { useEffect, useState } from "react";
 import { getAllBlogs } from "../services/UserService";
 import { Link } from "react-router-dom";
+import BlogDetails from "./BlogDetails";
 
 
 const BlogList = () => {
@@ -24,8 +25,8 @@ const BlogList = () => {
             <h1>Blog List</h1>
             {
                 allBlogList.map((blog, k) => {
-                    return <p obj={blog} key={k}> <Link to="BlogDetails">{blog.title} <br /></Link></p>
-                    // return <p obj={blog} key={k}> {blog.title} <br /></p>
+                    return <p obj={blog} key={k}> <Link to={`/BlogDetails/${blog.id}`}>{blog.title} <br /></Link></p>
+                    // return <p obj={blog} key={k}> <Link to="BlogDetails">{blog.title} <br /></Link></p>
                 })
             }
         </div>

@@ -1,114 +1,122 @@
+import { useState , useEffect} from "react";
+import { useParams } from "react-router";
+// import { Routes, Route, useParams } from 'react-router-dom';
+
+
 const BlogDetails = () => {
 
-  const [blog, setBlog] = useState(new Blog());
-const [blogIdToSearch, setBlogIdToSearch] = useState({});
-const [errMessage, setErrMessage] = useState('');
+    const blogParam = useParams();
+    const [blog, setBlog] = useState([]);
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${blogParam.id}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setBlog(data);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    }, []);
 
-const handleGetBlogById = (evt) => {
-    console.log(evt.target.value);
-    setBlogIdToSearch(evt.target.value);
-};
+    return (
+        <div>
+           <h1>Blog Details</h1>
+           <p>{blog.title}</p>
+           <p>{blog.body}</p>
+        </div>
+    );
 
-const submitGetBlogById = (evt) => {
-    console.log(blogIdToSearch);
-    getEmpById(blogIdToSearch)
-        .then(resp => resp.json())
-        .then((resp) => {
-            console.log(resp);
-            setEmp(resp); // directly use response 
-            setBlogIdToSearch('');
-        })
-        .catch((err) => {
-             console.log(err);
-            setErrMessage(`Employee id: ${eidToSearch} not found!`);
-            setEidToSearch('');
-            setEmp(new Employee());
-            
-        });
-    evt.preventDefault();
-};
-   
 };
 
 export default BlogDetails;
 
 
-// const [emp, setEmp] = useState(new Employee());
-// const [eidToSearch, setEidToSearch] = useState({});
-// const [errMessage, setErrMessage] = useState('');
+// const BlogDetails = () => {
+//     const { id } = useParams();
+//     const [blog, setBlog] = useState({});
+//     const [isLoading, setIsLoading] = useState(true);
 
-// const handleGetEmpById = (evt) => {
-//     console.log(evt.target.value);
-//     setEidToSearch(evt.target.value);
+//     useEffect(() => {
+//         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+//             .then((response) => response.json())
+//             .then((data) => {
+//                 setBlog(data);
+//                 setIsLoading(false); // Data has been loaded
+//             })
+//             .catch((error) => {
+//                 console.error("Error fetching data:", error);
+//                 setIsLoading(false); // Error occurred, set isLoading to false
+//             });
+//     }, [id]);
+
+//     return (
+//         <div>
+//             <h1>Blog Details</h1>
+//             {isLoading ? (
+//                 <p>Loading...</p>
+//             ) : (
+//                 <>
+//                     <p>{blog.title}</p>
+//                     <p>{blog.body}</p>
+//                 </>
+//             )}
+//         </div>
+//     );
 // };
 
-// const submitGetEmpById = (evt) => {
-//     console.log(eidToSearch);
-//     getEmpById(eidToSearch)
-//         .then(resp => resp.json())
-//         .then((resp) => {
-//             console.log(resp);
-//             setEmp(resp); // directly use response 
-//             setEidToSearch('');
-//         })
-//         .catch((err) => {
-//              console.log(err);
-//             setErrMessage(`Employee id: ${eidToSearch} not found!`);
-//             setEidToSearch('');
-//             setEmp(new Employee());
-            
-//         });
-//     evt.preventDefault();
+// export default BlogDetails;
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom";
+
+// const BlogDetails = () => {
+//     const { id } = useParams(); // Correctly destructure the id parameter
+//     const [blog, setBlog] = useState({}); // Use an object to store the blog data
+
+//     useEffect(() => {
+//         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+//             .then((response) => response.json())
+//             .then((data) => {
+//                 setBlog(data);
+//             })
+//             .catch((error) => {
+//                 console.error("Error fetching data:", error);
+//             });
+//     }, [id]); // Include id as a dependency to re-fetch data when it changes
+
+//     return (
+//         <div>
+//             <h1>Blog Details</h1>
+//             <p>{blog.title}</p>
+//             <p>{blog.body}</p>
+//         </div>
+//     );
 // };
 
-// return (
-//     <div>
-//         <h1>Employee Component</h1>
+// export default BlogDetails;
+
+
+
+// const BlogDetails = () => {
+
+//     // let blogId = new URLSearchParams(window.location.search).get('blog-id');
+//     // const url = `https://jsonplaceholder.typicode.com/posts/${blogId}`;
+//     const [blogDetails, setBlogDetails] = useState([]);
+//     fetch(`https://jsonplaceholder.typicode.com/posts/${blogId}`)
+
+//     return (
 //         <div>
-//             <p>Find Employee by Id</p>
-//             <form onSubmit={submitGetEmpById}>
-//                 <input type="number" name="eidToSearch"
-//                     value={eidToSearch} onChange={handleGetEmpById}
-//                     placeholder="Employee id" required />
-//                 <input type="submit" value="Submit" />
-//             </form>
+//             <h1>BlogDetails component...</h1>
 //         </div>
-//         <div>
-//             <p>Employee Data</p>
-//             <p>{errMessage}</p>
-//             <div>
-//                 {emp.id &&
-//                     <div>
-//                         <p>Name: {emp.name}</p>
-//                         <p>Username: {emp.username}</p>
-//                         <div>
-//                           <p>Address:</p>
-//                             <p>Street: {emp.address.street}</p>
-//                             <p>Suite: {emp.address.suite}</p>
-//                             <p>City: {emp.address.city}</p>
-//                             <p>Zipcode: {emp.address.zipcode}</p>
-//                             <div>
-//                                 <p>Location:</p>
-//                                 <p>Lattitude: {emp.address.geo.lat}</p>
-//                                 <p>Longitude: {emp.address.geo.lng}</p>
-//                             </div>
-//                         </div>
-//                         <p>Email: {emp.phone}</p>
-//                         <p>Website: {emp.website}</p>
-//                         <div>
-//                             <p>Company:</p>
-//                             <p>Name: {emp.company.name}</p>
-//                             <p>Catchphrase: {emp.company.catchPhrase}</p>
-//                             <p>BS: {emp.company.bs}</p>
-//                         </div>
-//                     </div>
-//                 }
-//             </div>
-//             <div>
-//             </div>
-//         </div>
-//     </div>
-// );
+//     );
+
 
  // return (
     //     <div>

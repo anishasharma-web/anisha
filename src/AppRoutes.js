@@ -23,7 +23,7 @@ const AppRoute = () => {
                   <Routes>
                     <Route exact path="home" element={<Home />}/>
                     <Route path="blog-list" element={<BlogList />}/>
-                    <Route path="blog-details" element={<BlogDetails/>}/>
+                    <Route path="blog-details/:id" element={<BlogDetails/>}/>
                     <Route path="login" element={<Login />}></Route>
                     <Route path="*" element={<Page404/>}/>
                     <Route path="register" component={Register} />
