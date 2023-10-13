@@ -1,6 +1,5 @@
-//login page
-
 import React, { useState } from 'react';
+import './Login.css'; 
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -17,32 +16,33 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
     console.log('Email:', email);
     console.log('Password:', password);
   };
 
   return (
-    <div>
+    <div className="login-container"> 
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
+        <div className="form-group"> 
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
+            id="email"
             value={email}
             onChange={handleEmailChange}
           />
         </div>
-        <div>
-          <label>Password:</label>
+        <div className="form-group"> 
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
+            id="password"
             value={password}
             onChange={handlePasswordChange}
           />
         </div>
-        <div>
+        <div className="button-container"> 
           <button type="submit">Login</button>
         </div>
       </form>
@@ -51,3 +51,4 @@ function Login() {
 }
 
 export default Login;
+
