@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import '../styles/BlogDetails.css';
 
 const BlogDetails = () => {
+    
     const blogParam = useParams();
     const [blog, setBlog] = useState({});
     const [comments, setComments] = useState([]);
