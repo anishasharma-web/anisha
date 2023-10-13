@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 import UserProfile from "./components/UserProfile";
+import NewBlog from "./components/NewBlog";
 
 
 const AppRoute = () => {
@@ -25,6 +26,7 @@ const AppRoute = () => {
                     <Route exact path="home" element={<Home />}/>
                     <Route path="blog-list" element={<BlogList />}/>
                     <Route path="BlogDetails/:id" element={<BlogDetails/>}/>
+                    <Route path="new-blog" element={<NewBlog />}/>
                     <Route path="login" element={<Login />}></Route>
                     <Route path="logout" element={<Logout />} />
                     <Route path="profile" element={<UserProfile />} />
