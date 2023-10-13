@@ -1,58 +1,53 @@
-import { useState } from "react";
-import { useNavigate } from "react-router";
-// import AppUser from "../../models/AppUser";
-import AppUser from "../models/AppUser";
-import { login } from "../services/UserService";
-// import { login } from "../../services/UserService";
+//login page
 
-const Login = () => {
+import React, { useState } from 'react';
 
-    const [loginData, setLoginData] = useState(new AppUser());
-    const [failedLogin, setFailedLogin] = useState('');
-    const navigate = useNavigate();
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleLogin = (evt) => {
-        console.log(evt.target);
-        setLoginData({
-            ...loginData,
-            [evt.target.name]: evt.target.value
-        });
-    };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
 
-    const submitLogin = (evt) => {
-        console.log(loginData);
-        login(loginData)
-            .then((resp) => {
-                if (resp.data[0].username === loginData.username) {
-                    localStorage.setItem('currentUser', JSON.stringify(resp.data[0]));
-                    setLoginData('');
-                    setFailedLogin('');
-                    alert(`Hi ${JSON.parse(localStorage.getItem('currentUser')).username}! You've logged in successfully. Redirecting you to home...`);
-                    navigate('/home');
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-                setLoginData({ username: '', password: '' });
-                setFailedLogin('Invalid credentials!');
-                localStorage.removeItem('currentUser');
-            });
-        evt.preventDefault();
-    };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
-    return (
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+
+    console.log('Email:', email);
+    console.log('Password:', password);
+  };
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
         <div>
-            <h1>Login</h1>
-            <div>
-                <form onSubmit={submitLogin}>
-                    <input type="text" name="username" value={loginData.username} onChange={handleLogin} />
-                    <input type="password" name="password" value={loginData.password} onChange={handleLogin} />
-                    <input type="submit" name="login" value="Login" />
-                </form>
-            </div>
-            <p>{failedLogin}</p>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
         </div>
-    );
-};
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <div>
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+  );
+}
 
 export default Login;

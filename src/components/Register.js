@@ -1,24 +1,30 @@
+//register page
+
 import React, { useState } from 'react';
 
-//(functional component) initializes a state variable formData using the useState hook. 
-//It stores form data, username, password, and email.
 function Register() {
-  const [formData, setFormData] = useState({ 
-    username: '', 
-    password: '', 
-    email: '' 
-});
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, 
-        [e.target.name]: e.target.value });
-         
-//then updating the field specified by e.target.name with the new value e.target.value. 
-//This allows the form fields to be controlled by React.
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log('Name:', name);
+    console.log('Email:', email);
+    console.log('Password:', password);
   };
 
   return (
@@ -26,13 +32,16 @@ function Register() {
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} />
+          <label>Name:</label>
+          <input type="text" value={name} onChange={handleNameChange} />
         </div>
         <div>
-          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
+          <label>Email:</label>
+          <input type="email" value={email} onChange={handleEmailChange} />
         </div>
         <div>
-          <input type="text" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+          <label>Password:</label>
+          <input type="password" value={password} onChange={handlePasswordChange} />
         </div>
         <div>
           <button type="submit">Register</button>
@@ -40,6 +49,6 @@ function Register() {
       </form>
     </div>
   );
-};
+}
 
 export default Register;
