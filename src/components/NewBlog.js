@@ -2,7 +2,7 @@ const NewBlog = () => {
   
     return (
         <div>
-            <h1>NewBlog component...</h1>
+            <h1>Write a blog</h1>
             <div>
                 <form >
                     <label ></label>
