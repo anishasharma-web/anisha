@@ -1,14 +1,11 @@
  import { useEffect, useState } from "react";
-import { getAllBlogs } from "../services/UserService";
+import { getAllBlogs } from "../services/BlogService";
+import { Link } from "react-router-dom";
+import '../styles/BlogList.css'
+import BlogDetails from "./BlogDetails";
 
 
 const BlogList = () => {
-
-    // return (
-    //     <div>
-    //         <h1>BlogList component...</h1>
-    //     </div>
-    // );
 
     const [allBlogList, setAllBlogList] = useState([]);
     
@@ -27,11 +24,15 @@ const BlogList = () => {
     return (
         <div>
             <h1>Blog List</h1>
+            <div className="list">
             {
                 allBlogList.map((blog, k) => {
-                    return <p obj={blog} key={k}> {blog.title} <br /></p>
+                    return <p obj={blog} key={k}> <Link to={`/BlogDetails/${blog.id}`} className="blog-list">{blog.title} <br /></Link></p>
+                    // return <p obj={blog} key={k}> <Link to="BlogDetails">{blog.title} <br /></Link></p>
                 })
             }
+            </div>
+           
         </div>
     );
 };

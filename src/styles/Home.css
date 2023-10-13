@@ -1,0 +1,18 @@
+.home {
+    background-image: url('http://www.hdcarwallpapers.com/walls/2014_mercedes_benz_cls_63_amg-wide.jpg'); /* Replace 'path/to/mercedes-car-image.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Set the height to fill the viewport */
+    
+}
+
+/* .home{
+    background: url('https://wallpapercave.com/dwp2x/F14VU0L.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+h1{
+    padding: 0ch;
+    color: blue;
+} */

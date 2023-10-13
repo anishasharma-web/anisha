@@ -1,0 +1,16 @@
+.list {
+    /* background-color: black;  */
+    color: black; 
+    padding: 15px; 
+}
+
+.blog-list {
+    color: black; 
+    text-decoration: none;
+}
+
+.blog-list:hover {
+    text-decoration: underline; 
+    color: blueviolet;
+}
+

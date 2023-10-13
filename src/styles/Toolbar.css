@@ -1,0 +1,56 @@
+
+
+.toolbar {
+    background-color: black; /* Black navigation bar background color */
+    display: flex;
+    /* justify-content: space-between; */
+    /* justify-content: center; */
+    align-items: center;
+    padding: 30px 20px;
+    font-size: large;
+    border-bottom: 2px solid white;
+    font-family: sans-serif;
+}
+
+.link {
+    color: white; /* Text color for regular links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    float:left;
+}
+
+.right-link {
+    color: white; /* Text color for right-aligned links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    float: right;
+}
+
+
+/* .toolbar{
+    position: relative;
+    background-color: black;
+    height: 80px;
+    width: 100%;
+    
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.link{
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.right-link{
+    padding: 20px;
+    float: right;
+    color: white;
+    text-decoration: none;
+   
+} */

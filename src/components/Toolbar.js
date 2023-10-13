@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
+import '../styles/Toolbar.css'
 
 const Toolbar = () => {
   
     return (
-        <div>
-            <Link to="Home">Home</Link>
-            <Link to="blog-list">All Blogs</Link>
-            <Link to="BlogDetails">Blog Details</Link>
-            <Link to="login">Login</Link>
-            <Link to="Register">Register</Link>
+        <div class='toolbar'>
+            <Link to="Home" class='link'>Home</Link>
+            <Link to="blog-list" class='link'>All Blogs</Link>
+            <Link to="new-blog" class='link'>Write a Blog</Link>
+            <Link to="random-blog" class='link'>Blog of the Day</Link>
+            {/* <Link to="BlogDetails">Blog Details</Link> */}
+            <Link to="login" class='right-link'>Login</Link>
+            <Link to="logout" class='right-link'>Logout</Link>
+            <Link to="profile" class='link'>Profile</Link>
+            <Link to="Register" class='right-link'>Register</Link>
         </div>
     );
 };
