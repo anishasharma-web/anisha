@@ -7,6 +7,8 @@ const Toolbar = () => {
         <div class='toolbar'>
             <Link to="Home" class='link'>Home</Link>
             <Link to="blog-list" class='link'>All Blogs</Link>
+            <Link to="new-blog" class='link'>Write a Blog</Link>
+            <Link to="random-blog" class='link'>Blog of the Day</Link>
             {/* <Link to="BlogDetails">Blog Details</Link> */}
             <Link to="login" class='right-link'>Login</Link>
             <Link to="logout" class='right-link'>Logout</Link>

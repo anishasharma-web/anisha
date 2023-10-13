@@ -27,7 +27,7 @@ const BlogList = () => {
             <div className="list">
             {
                 allBlogList.map((blog, k) => {
-                    return <p obj={blog} key={k}> <Link to={`/BlogDetails/${blog.id}`} className="blog-details">{blog.title} <br /></Link></p>
+                    return <p obj={blog} key={k}> <Link to={`/BlogDetails/${blog.id}`} className="blog-list">{blog.title} <br /></Link></p>
                     // return <p obj={blog} key={k}> <Link to="BlogDetails">{blog.title} <br /></Link></p>
                 })
             }
