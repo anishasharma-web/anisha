@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css'; // Import your CSS file
+import './Login.css'; 
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -21,10 +21,10 @@ function Login() {
   };
 
   return (
-    <div className="login-container"> {/* Apply a CSS class */}
+    <div className="login-container"> 
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group"> {/* Apply a CSS class */}
+        <div className="form-group"> 
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -33,7 +33,7 @@ function Login() {
             onChange={handleEmailChange}
           />
         </div>
-        <div className="form-group"> {/* Apply a CSS class */}
+        <div className="form-group"> 
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -42,7 +42,7 @@ function Login() {
             onChange={handlePasswordChange}
           />
         </div>
-        <div className="button-container"> {/* Apply a CSS class */}
+        <div className="button-container"> 
           <button type="submit">Login</button>
         </div>
       </form>
