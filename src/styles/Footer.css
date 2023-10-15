@@ -1,0 +1,36 @@
+/* Footer.css */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    /* max-width: 800px; */
+    max-width: 400px;
+    margin: 0 auto;
+    /* margin-bottom: 10px auto; */
+  }
+  
+  .contact h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  /* .contact p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  } */
+  
+  .mail-link {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .email-link:hover {
+    text-decoration: underline;
+    color: white;
+  }
+  

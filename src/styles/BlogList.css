@@ -1,5 +1,36 @@
+/* BlogList.css */
+h1{
+    text-align: center;
+}
+
+
 .list {
-    /* background-color: black;  */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .blog-box {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* width: 300px;  */
+    width: 100%;
+    margin: 10px;
+  }
+  
+  .blog-list {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .blog-box:hover {
+    background-color: #ddd;
+  }
+  
+
+/* .list {
     color: black; 
     padding: 15px; 
 }
@@ -12,5 +43,5 @@
 .blog-list:hover {
     text-decoration: underline; 
     color: blueviolet;
-}
+} */
 

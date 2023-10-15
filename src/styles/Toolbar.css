@@ -8,9 +8,9 @@
     align-items: center;
     padding: 30px 20px;
     font-size: large;
-    border-bottom: 2px solid white;
+    /* border-bottom: 2px solid white; */
     font-family: sans-serif;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .link {
